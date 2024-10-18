@@ -713,6 +713,7 @@ tr.user_rate .name {
 
 .p-profiles .profile-head .c-info .c-additionals div a {
   color: var(--color-2);
+  text-decoration: underline;
 }
 
 .p-profiles .profile-head .c-info .c-additionals b {
@@ -740,12 +741,9 @@ tr.user_rate .name {
 
 a,
 a:link,
-a:active {
-    color: var(--color-2);
-}
-
-a:hover {
-  color: var(--color-2);
+a:active,
+a:hover{
+    color: var(--color-2) !important;
 }
 
 .b-options-floated a, .b-options-floated .link {
@@ -989,10 +987,6 @@ header.head a.misc, header.head a.edit {
  text-decoration: underline;
 }
 
-.b-footer_vote {
- color:
-}
-
 .b-comment>.inner .name-date a.name {
  color: var(--color-3);
 }
@@ -1015,7 +1009,7 @@ header.head h1 a.back:after, header.head h2 a.back:after {
 }
 
 .b-message>.inner .name-date a.name {
-  color: var(--color-3);
+  color: var(--color-1) !important;
 }
 
 a.b-mention {
@@ -1054,6 +1048,7 @@ a.b-mention {
 
 .ProseMirror, code.b-code_inline, .b-shiki_editor .body .editor textarea:not([rows]) {
   background-color: var(--color-2);
+  color: black;
 }
 
 .buttons span:first-child, .buttons label:first-child, .buttons a:not(.b-button):first-child {
@@ -1074,4 +1069,37 @@ a.b-mention {
 
 .buttons .editor-link:active {
   color: black;
+}
+
+.b-user.named_avatar .name {
+  color: var(--color-1);
+}
+
+.headline .misc-links>a, .midheadline .misc-links>a, .subheadline .misc-links>a {
+  color: var(--color-2);
+}
+
+.b-dialog>.inner .name-date a.name {
+  color: var(--color-1) !important;
+}
+
+.b-shiki_editor footer input[type=submit], .b-shiki_editor footer .unpreview, .b-shiki_editor footer .preview {
+  background-color: var(--color-1);
+}
+
+::selection {
+  background: lightblue !important;
+  color: #0000;
+}
+
+.b-add_to_list .trigger-arrow {
+  color: var(--color-4);
+}
+
+.b-add_to_list.watching .edit:before {
+  color: var(--color-4);
+}
+
+.b-add_to_list .trigger .text .status-name:after, .b-add_to_list .option .text .status-name:after {
+  color: var(--color-4) !important;
 }
