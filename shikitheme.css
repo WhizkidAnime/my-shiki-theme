@@ -28,7 +28,6 @@ body, html {
   background-image: linear-gradient(
     -225deg,
     #87cefa 0%,
-    #5da7e6 25%,
     #3380d2 50%,
     #0a59be 75%,
     #002387 100%
@@ -41,10 +40,43 @@ body, html {
   font-weight: bold;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-  animation: u-nikcname-animbg 2s linear infinite;
+  animation: u-nikcname-animbg 1s linear infinite;
 }
 
 @keyframes u-nikcname-animbg {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.p-profiles .about.block .b-spoiler label {
+  background: linear-gradient(
+    -225deg, 
+    #87cefa 0%,
+    #3380d2 50%,
+    #0a59be 75%,
+    #002387 100%
+  );
+  border: none;
+  background-size: auto auto;
+  background-clip: text;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  display: inline-block !important;
+  font-weight: bold;
+  color: var(--color-1); /* цвет текста спойлера */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  height: 30px;
+  width: 100%;
+  font-size: 12pt; /* размер шрифта текста на спойлере */
+  padding-top: 3px;
+  text-align: center;
+  margin-bottom: 5px;
+  animation: u-label-spoiler 1s linear infinite;
+}
+
+@keyframes u-label-spoiler {
   to {
     background-position: 200% center;
   }
@@ -88,8 +120,8 @@ body, html {
 
 
 :root {
-  --my-clr: rgb(0, 0, 102);  /* Тёмно-синий */
-  --dropdown: rgb(0, 0, 51); /* Очень тёмно-синий, почти чёрный */
+  --my-clr: #3f5c91;  
+  --dropdown: #191970; 
 }
 
 
@@ -187,22 +219,6 @@ body {
                    /*  позиция смс \/  */
     left: calc(var(--icon-width) * 3 + calc(var(--icon-width) / 2));
   }
-}
-
-.p-profiles .about.block .b-spoiler label {
-  border: none;
-  display: inline-block !important;
-  font-weight: bold; /* толщина шрифта, можно убрать, если не нужно */
-  color: var(--color-1); /* цвет текста спойлера */
-  --_b-l: color-mix(in srgb, var(--my-clr), #000 75%);
-  --_b-r: color-mix(in srgb, var(--dropdown), #000 75%);
-  background: linear-gradient(90deg, var(--_b-l), var(--_b-r)) !important;
-  height: 30px;
-  width: 100%;
-  font-size: 12pt; /* размер шрифта текста на спойлере */
-  padding-top: 3px;
-  text-align: center;
-  margin-bottom: 5px;
 }
 
 .p-profiles .about.block .b-spoiler .after:before, .about.block .b-spoiler .before:before {
@@ -731,7 +747,7 @@ tr.user_rate .name {
 }
 
 .headline>a, .midheadline>a, .subheadline>a {
-	color: var(--color-1) !important;
+  color: var(--color-1) !important;
 }
 
 .headline, .midheadline, .subheadline {
@@ -744,12 +760,13 @@ tr.user_rate .name {
 a,
 a:link,
 a:active,
-a:hover{
+a:hover, .b-js-link {
     color: var(--color-2) !important;
 }
 
 .b-options-floated a, .b-options-floated .link {
     color: var(--color-2) !important;
+    text-decoration: underline;
 }
 
 :root {
@@ -823,7 +840,7 @@ span.hotkey-marker {
 
 /* Меняет цвет фона кнопок*/
 .btn-primary.btn-submit.btn  {
-  background-color: rgb(0, 0, 102);
+  background-color: var(--color-4);
   color: var(--color-2) !important;
 }
 
@@ -882,8 +899,8 @@ span.hotkey-marker {
   color: var(--color-2);
 }
 
-.edit-trigger .edit {
-  color: rgb(0, 0, 51) !important;
+:is(.b-user_rate, .b-catalog_entry-tooltip) .b-add_to_list :is(.trigger, .edit) {
+  color: var(--color-4);
 }
 
 
@@ -942,13 +959,13 @@ header.head h1 {
 
 
 :is(.p-animes-show, .p-mangas-show, .p-ranobe-show) .other-names, .b-comments :is(.comments-loader, .comments-hider, .comments-expander), :is(.b-comments, .b-forum) .faye-loader {
-	background-color: var(--color-4) !important;
-	color: var(--color-1);
+  background-color: var(--color-4) !important;
+  color: var(--color-1);
 }
 
 .b-quote {
-	background-color: var(--color-4);
-	color: var(--color-2);
+  background-color: var(--color-4);
+  color: var(--color-2);
 }
 
 .p-profiles .profile-head .c-history .entry .misc, .p-profiles .profile-head .c-history .entry .misc.date {
@@ -964,7 +981,7 @@ header.head h1 {
 }
 
 .b-collection_search .field input {
-	background: #0000;
+  background: #0000;
 }
 
 .b-form a.remove {
@@ -972,9 +989,9 @@ header.head h1 {
   font-weight: bold;
 }
 
-.b-spoiler label {
+/*.b-spoiler label {
  color: var(--color-2);
-}
+}*/
 
 .b-link {
  color: var(--color-2);
@@ -990,7 +1007,7 @@ header.head a.misc, header.head a.edit {
 }
 
 .b-comment>.inner .name-date a.name {
- color: var(--color-3);
+ color: var(--color-3) !important;
 }
 
 header.head h1 a.back:after, header.head h2 a.back:after {
@@ -1015,7 +1032,7 @@ header.head h1 a.back:after, header.head h2 a.back:after {
 }
 
 a.b-mention {
- color: var(--color-3);
+ color: var(--color-3) !important;
 }
 
 .b-animes-menu .menu-topics-block .entry .name {
@@ -1028,7 +1045,7 @@ a.b-mention {
 }
 
 .b-catalog_entry-tooltip .inner a.name {
-  color: var(--color-1);
+  color: var(--color-1) !important;
 }
 
 .b-subposter-action.fav-remove {
@@ -1104,4 +1121,55 @@ a.b-mention {
 
 .b-add_to_list .trigger .text .status-name:after, .b-add_to_list .option .text .status-name:after {
   color: var(--color-4) !important;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-1) !important;
+}
+
+.b-edit_styles .body_background #body_background_input {
+  background-color: var(--color-2) !important;
+}
+
+.b-input input[type=text], .b-input input[type=url] {
+  background: var(--color-2);
+  color: black;
+}
+
+.b-input input[disabled] {
+  background-color: var(--color-2) !important;
+  color: grey;
+}
+
+.vue-node .icons :is(button, label).icon, .buttons .b-tooltipped {
+  color: black !important;
+}
+
+.menubar .icons[data-v-082d85bb] {
+  background: var(--color-1);
+}
+
+.b-shiki_editor-v2 footer .cancel:not(a), .b-shiki_editor-v2 footer .hide:not(a) {
+  background: var(--color-1);
+  color: var(--color-2);
+}
+
+:is( .b-reviews_navigation .navigation-node, .b-review-topic.is-review_review_author_details > .inner :is(.label, .opinion) ) {
+  background: var(--color-4) !important;
+}
+
+.b-add_to_list .plus, .b-add_to_list .plus:active {
+  color: var(--color-4) !important;
+}
+
+.b-spoiler_block > span {
+  background-color: var(--color-4);
+}
+
+.b-form input[type="submit"]:hover, .b-button:hover, .b-link_button.dark:hover, .b-link_button:hover, .b-poll .poll-actions .vote:hover, .b-poll .poll-actions .abstain:hover {
+  background-color: var(--color-1);
+}
+
+.p-profiles .profile-head .c-history .entry {
+  border-top: none;
 }
