@@ -1,3 +1,5 @@
+@import url(https://raw.githubusercontent.com/Dedonych/Shikimori-Dark-Theme/master/shikimori_dark.css);
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body, html {
@@ -83,7 +85,7 @@ body, html {
 
 
 
-@import url(https://raw.githubusercontent.com/Dedonych/Shikimori-Dark-Theme/master/shikimori_dark.css);
+
 
 :root {
   --my-clr: rgb(0, 0, 102);  /* Тёмно-синий */
