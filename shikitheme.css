@@ -1,0 +1,1077 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body, html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
+:root {
+  --color-1: #6495ed;
+  --color-2: #f4f0ec;
+  --color-3: #00ccff;
+  --color-4: #1d2951;
+}
+
+.p-profiles .profile-head .avatar {
+  background: url("https://i.pinimg.com/originals/fe/4f/be/fe4fbee33daaa301e2155702962fa927.gif") center / cover;
+}
+
+.p-profiles .profile-head .avatar img {
+  visibility: hidden;
+}
+
+#profiles_show .profile-head .c-brief header h1 {
+  background-image: linear-gradient(
+    -225deg,
+    #87cefa 0%,
+    #5da7e6 25%,
+    #3380d2 50%,
+    #0a59be 75%,
+    #002387 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: u-nikcname-animbg 2s linear infinite;
+}
+
+@keyframes u-nikcname-animbg {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Отображение дат в истории */
+@import url("https://raw.githubusercontent.com/kaurkaur/Shikimori/master/CSS/HistoryDates.css");
+
+.b-separator {
+    background: #0000;
+}
+
+
+#profiles_edit .editor-expand.active {
+  color: var(--color-1);
+}
+
+#profiles_edit .editor-collapse {
+  color: var(--color-1);
+}
+
+
+.p-user_rates-index .l-content .b-options-floated span {
+      color: var(--color-2) !important;
+}
+
+
+/*-------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(https://raw.githubusercontent.com/Dedonych/Shikimori-Dark-Theme/master/shikimori_dark.css);
+
+:root {
+  --my-clr: rgb(0, 0, 102);  /* Тёмно-синий */
+  --dropdown: rgb(0, 0, 51); /* Очень тёмно-синий, почти чёрный */
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #4169e1;
+}
+
+/* убрать фон */
+.l-page {
+  background-color: #0000;
+}
+
+/* gradient background: !important для всех разрешений */
+body {
+  --_b-l: color-mix(in srgb, var(--my-clr), #000 75%);
+  --_b-r: color-mix(in srgb, var(--dropdown), #000 75%);
+  background: linear-gradient(90deg, var(--_b-l), var(--_b-r)) !important;
+}
+
+.subheadline,
+.midheadline,
+.headline {
+   background-color: #0000;
+   border: 0;
+   border-bottom: 2px solid currentColor !important;
+  /* треугольник заменить на ссылку */
+  & > a:before {
+    content: "\01f517";
+  }
+}
+
+@media all {
+  .turbolinks-progress-bar {
+    background: var(--clr-main-light) !important;
+    -webkit-box-shadow: 0 0 8px var(--my-clr) !important;
+    box-shadow: 0 0 10px var(--my-clr) !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin-bottom: 48px;
+    --icon-width: calc(calc(100vw / 5));
+  }
+  :is(
+      .icon-profile,
+      .icon-anime_list,
+      .icon-manga_list,
+      .icon-mail,
+      .icon-settings
+    ) {
+    &::after {
+      font-family: shikimori;
+      position: fixed;
+      bottom: 0;
+      width: var(--icon-width);
+      height: 48px;
+      left: calc(var(--icon-width) * var(--icon-left));
+      background-color: var(--dropdown);
+      text-align: center;
+      font-size: 1.5rem;
+      z-index: 2;
+    }
+    &:focus:after {
+      background: color-mix(in srgb, var(--dropdown) 70%, var(--color-2));
+    }
+  }
+  .icon-anime_list:after {
+    --icon-left: 0;
+    content: "\eba5";
+  }
+  .icon-manga_list:after {
+    --icon-left: 1;
+    content: "\eba6";
+  }
+  .icon-profile:after {
+    --icon-left: 2;
+    content: "\e849";
+    font-size: 2.5em;
+  }
+  .icon-mail:after {
+    --icon-left: 3;
+    content: "\e81f";
+  }
+  .icon-settings:after {
+    --icon-left: 4;
+    content: "\e822";
+  }
+  /* смс анрид */
+  .l-top_menu-v2 .menu-dropdown > span[data-unread_count]:after {
+    position: fixed;
+    z-index: 3;
+    top: auto;
+    bottom: 24px;
+                   /*  позиция смс \/  */
+    left: calc(var(--icon-width) * 3 + calc(var(--icon-width) / 2));
+  }
+}
+
+.p-profiles .about.block .b-spoiler label {
+  border: none;
+  display: inline-block !important;
+  font-weight: bold; /* толщина шрифта, можно убрать, если не нужно */
+  color: var(--color-1); /* цвет текста спойлера */
+  --_b-l: color-mix(in srgb, var(--my-clr), #000 75%);
+  --_b-r: color-mix(in srgb, var(--dropdown), #000 75%);
+  background: linear-gradient(90deg, var(--_b-l), var(--_b-r)) !important;
+  height: 30px;
+  width: 100%;
+  font-size: 12pt; /* размер шрифта текста на спойлере */
+  padding-top: 3px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.p-profiles .about.block .b-spoiler .after:before, .about.block .b-spoiler .before:before {
+  content: "";
+}
+
+.p-profiles .about.block .b-spoiler .before {
+  width: 100%;
+  height: 50px;
+  display: inline-block !important;
+  margin-top: -50px;
+}
+
+/* Списки: одна строка */
+tr.user_rate {
+  border-bottom: 1px solid #555;
+}
+tr.user_rate .name {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  a {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  &:has(.rewatches:not(:empty)) a {
+    max-width: calc(100% - 150px);
+  }
+
+  .rate-text {
+    width: 100%;
+    div {
+      border-top: 1px dashed #555;
+      padding-top: 2px;
+      color: var(--txt-secondary-dark);
+    }
+  }
+}
+
+:root {
+  --p_gap: 16px;
+  --bckg-cards: #0004;
+}
+
+.p-dashboards-show .v2 .my-list {
+  background: var(--bckg-cards);
+  border-radius: 12px;
+}
+@keyframes cardsOpacity {
+  to {
+    opacity: 1;
+  }
+}
+
+/* cards */
+#profiles_show
+  .profile-head
+  :is(.c-brief, .b-stats_bar, .c-additionals, .c-history),
+#profiles_show
+  .profile-content
+  :is(
+    .achievements,
+    .cc-2 > .c-left,
+    .cc-2 > .c-right > .cc-2a > .c-column,
+    .cc-2 > .c-right > .block,
+    .about,
+    .block:last-of-type
+  ) {
+  position: relative;
+  width: 100%;
+  margin: 0 !important;
+  background: var(--bckg-cards);
+  opacity: 0;
+  animation: cardsOpacity 0.5s var(--delay, 0.1s) forwards;
+  transition: background 0.2s;
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  z-index: 1;
+
+  &:hover {
+    --bckg-cards: #0006;
+  }
+}
+
+#profiles_show .l-page > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(7, auto);
+  gap: var(--p_gap);
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 100%;
+  }
+}
+
+#profiles_show .profile-head,
+  #profiles_show .profile-head .c-info,
+  #profiles_show .profile-head .c-lists-info,
+  /* #profiles_show .profile-head .c-mobile-actions, */
+  #profiles_show .profile-content,
+  #profiles_show .profile-content > .cc-2,
+  #profiles_show .profile-content > .cc-2 > .c-right > .cc-2a,
+  #profiles_show .profile-content > .cc-2 > .c-right {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  margin: 0;
+}
+
+#profiles_show .profile-head {
+  /* Информация */
+  .c-brief {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    display: grid;
+    position: relative;
+    background: transparent;
+    --delay: 0.1s;
+    &:before {
+      content: "";
+      position: absolute;
+      background: var(--bckg-cards);
+      z-index: -1;
+      width: 100%;
+      height: 70%;
+      border-radius: 12px;
+      bottom: 0;
+    }
+    header {
+      border: 0;
+      margin: 0;
+    }
+  }
+
+  /* История */
+  .c-history {
+    grid-row: 1 /4;
+    --delay: 0.5s;
+  }
+
+  /* Списки аниме и манги */
+  .b-stats_bar.anime,
+  .b-stats_bar.manga {
+    grid-column: 2 / -2;
+    grid-row: 1;
+    --delay: 0.3s;
+  }
+
+  .b-stats_bar.manga {
+    grid-row: 2;
+  }
+
+  /* Активность (скрыто за достижениями) */
+  .c-additionals {
+    grid-column: 2 / -2;
+    grid-row: 3;
+  }
+}
+
+#profiles_show .profile-content {
+  /* Графики активности */
+  & > .cc-2 > .c-left {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    --delay: 0.3s;
+    .lifetime {
+      display: block;
+    }
+    .title {
+      margin: 0;
+    }
+    .activity .graph {
+      height: 92px;
+      .line .x_label {
+        bottom: -15px;
+      }
+    }
+  }
+
+  /* Друзья и Клубы */
+  & > .cc-2 > .c-right > .cc-2a {
+    grid-column: 1;
+    grid-row: 5;
+    --delay: 0.4s;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-content: space-around;
+    gap: var(--p_gap);
+    margin: 0 !important;
+    overflow: hidden;
+    border-radius: 12px;
+    &:after,
+    .b-clubs:before,
+    .b-clubs:after {
+      content: none;
+    }
+    .c-column > div:last-of-type {
+      .avatar {
+        width: 48px;
+        aspect-ratio: 1;
+        margin: 0;
+      }
+    }
+  }
+
+  /* Избранное */
+  & > .cc-2 > .c-right > [class="block"] {
+    grid-column: 3/ -1;
+    grid-row: 4;
+    --delay: 0.4s;
+    .cc-favourites {
+      max-height: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow-y: scroll;
+      gap: 8px;
+      article {
+        margin: 0;
+        height: 92px;
+        .image-cutter {
+          max-height: 92px;
+          height: 92px;
+        }
+      }
+    }
+  }
+
+  /* Достижения */
+  & > .achievements {
+    grid-column: 2 / -1;
+    grid-row: 5;
+    --delay: 0.7s;
+    .b-achievement,
+    .b-badge {
+      margin: 0;
+    }
+    .cc-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  gap: 0 var(--p_gap);
+  justify-content: center;
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+      & > .c-column {
+        scroll-snap-align: center;
+        width: 100%;
+        margin: 0;
+        [class*="cc"] {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+      }
+    }
+  }
+
+  /* О себе */
+  & > .about {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    --delay: 0.5s;
+  }
+  .subheadline-buttons {
+    right: 8px;
+  }
+
+  /* Лента */
+  & > [class="block"] {
+    grid-column: 1 / -1;
+
+    --delay: 0.6s;
+  }
+}
+
+#profiles_show .profile-head .avatar {
+  margin: var(--p_gap) auto 0 auto;
+  width: 160px;
+  height: 160px;
+  translate: 0 -20px;
+  border-radius: 50%;
+  &::after {
+    background-color: var(--bckg-dark);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+  &:before {
+    margin: 0;
+    top: 50%;
+    left: 55%;
+    translate: -50% -50%;
+    position: absolute;
+  }
+  .profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -35%;
+    top: 80px;
+    @media screen and (max-width: 768px) {
+      right: -60%;
+    }
+    a {
+      margin: 0;
+    }
+  }
+}
+
+/* там где аватарка текст поправить */
+#profiles_show .profile-head .c-brief header {
+  text-align: center;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  .misc {
+    padding: 0;
+  }
+}
+
+/* убрать скролл в мобилке */
+#profiles_show ::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+  /* убрать скролл в мобилке */
+  #profiles_show ::-webkit-scrollbar {
+    display: none;
+  }
+  #profiles_show .profile-head {
+    overflow-x: scroll;
+    grid-column: 1;
+    grid-row: 1;
+    scroll-snap-type: x mandatory;
+    grid-template-columns: 100% 100%;
+    grid-template-rows: repeat(2, auto);
+    gap: var(--p_gap);
+    position: relative;
+    &::after,
+    &::before {
+      content: none;
+    }
+    .c-mobile-actions {
+      display: none;
+    }
+    /* Информация */
+    .c-brief {
+      grid-column: 1;
+      grid-row: 1;
+      scroll-snap-align: center;
+    }
+    /* История */
+    .c-history {
+      grid-column: 2;
+      grid-row: 1;
+      display: block;
+      scroll-snap-align: center;
+      .entry {
+        display: block;
+      }
+    }
+    /* Списки аниме и манги */
+    .c-info {
+      grid-column: 1 / -1;
+    }
+    .c-lists-info {
+      grid-column: 1;
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll;
+      grid-template-columns: 100% 100%;
+      gap: 16px;
+    }
+    .b-stats_bar.anime,
+    .b-stats_bar.manga {
+      scroll-snap-align: center;
+      grid-row: 2;
+      grid-column: 1;
+    }
+    .b-stats_bar.manga {
+      grid-column: 2;
+    }
+
+    /* Активность (скрыто за достижениями) */
+    .c-additionals {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+  #profiles_show .profile-content {
+    /* Графики активности */
+    & > .cc-2 > .c-left {
+      grid-column: 2;
+      grid-row: 3;
+      .lifetime {
+        display: block;
+      }
+      .activity {
+        display: none;
+      }
+    }
+
+    /* Друзья и избранное  */
+    & > .cc-2 > .c-right {
+      grid-column: 1;
+      grid-row: 2;
+      display: grid;
+      gap: var(--p_gap);
+      width: 100%;
+      grid-template-columns: 100% 100%;
+      overflow-y: scroll;
+      scroll-snap-type: x mandatory;
+    }
+
+    /* Друзья и Клубы */
+    & > .cc-2 > .c-right > .cc-2a {
+      grid-column: 1;
+      scroll-snap-align: center;
+    }
+
+    /* Избранное */
+    & > .cc-2 > .c-right > [class="block"] {
+      grid-column: 2;
+      scroll-snap-align: center;
+
+      .cc-favourites {
+        gap: 6px;
+        max-height: calc(80px * 2 + 18px);
+        article {
+          margin: 0;
+          height: 80px;
+          .image-cutter {
+            max-height: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+
+    /* Достижения */
+    & > .achievements {
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    /* О себе */
+    & > .about {
+      grid-column: 1;
+      grid-row: 5;
+    }
+
+    /* Лента */
+    & > [class="block"] {
+      grid-column: 1;
+      grid-row: 6;
+    }
+  }
+  /* scrolll */
+  #profiles_show
+    :is(
+      .profile-head .c-brief,
+      .c-history,
+      .b-stats_bar.anime,
+      .b-stats_bar.manga,
+      .cc-2 > .c-right > .cc-2a,
+      .cc-2 > .c-right > [class="block"]
+    ):after,
+  #profiles_show .profile-content .achievements .cc-2:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    box-shadow: 0 0 6px 2px #fff;
+    z-index: 2;
+  }
+
+  #profiles_show
+    :is(
+      .c-history,
+      .b-stats_bar.manga,
+      .cc-2 > .c-right > [class="block"]
+    ):after {
+    right: auto;
+    left: 0;
+  }
+
+  /* аватарка линия */
+  #profiles_show .profile-head .c-brief:after {
+    height: calc(70% - 8px) !important;
+    top: auto !important;
+    bottom: 0 !important;
+  }
+}
+
+.p-profiles .profile-head .c-history .entry .title {
+  color: var(--color-1);
+}
+
+.b-catalog_entry .cover .title.two_lined {
+  color: var(--color-1);
+}
+
+.p-profiles .profile-head .c-info .c-additionals div a {
+  color: var(--color-2);
+}
+
+.p-profiles .profile-head .c-info .c-additionals b {
+  color: var(--color-1);
+}
+
+.profile-content .subheadline {
+    color: var(--color-1) !important;
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a, .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
+  color: var(--color-2) !important;
+}
+
+.headline>a, .midheadline>a, .subheadline>a {
+	color: var(--color-1) !important;
+}
+
+.headline, .midheadline, .subheadline {
+ color: var(--color-1);
+}
+.p-user_rates-index .stat-categories .category {
+  color: var(--color-2);
+}
+
+a,
+a:link,
+a:active {
+    color: var(--color-2);
+}
+
+a:hover {
+  color: var(--color-2);
+}
+
+.b-options-floated a, .b-options-floated .link {
+    color: var(--color-2) !important;
+}
+
+:root {
+  /* График активности */
+  --bar-main: #4f86f7;
+}
+
+/* Полоски */
+.b-stats_bar {
+  &.anime {
+    --first: #4166f5;
+  }
+  &.manga {
+    --first: #000f89;
+  }
+  &.lifetime {
+    --first: #4f86f7;
+  }
+}
+
+/* Подсветка онгоингов \ анонсов */
+tr.user_rate :is(.anons, .ongoing) {
+  display: none;
+}
+tr.user_rate:has(.anons) {
+  background: #ff851b43;
+  &:hover {
+    background: #d36b1043 !important;
+  }
+}
+tr.user_rate:has(.ongoing) {
+  background: #2ecc4043;
+  &:hover {
+    background: #1b9e2b43 !important;
+  }
+}
+/* ховер на обичке в списке */
+.p-user_rates-index .list-lines .selectable:hover {
+  background-color: #0006;
+}
+
+th.num.order-control, .block .subheadline, .p-animes-show .l-page div header.head h1, th.name.order-control.active, .p-characters-show .l-page div header.head h1, .p-people-show .l-page div header.head h1 {
+  color: var(--color-1) !important;
+}
+/* Закончился этот код */
+
+.l-footer .copyright::after {
+  content: " theme by Dedonych";
+  white-space: pre;
+  color: var(--color-1);
+  font-style: italic;
+}
+
+.l-footer .copyright {
+  color: var(--color-2);
+}
+
+.head.misc.is-own-profile h1 {
+  color: var(--color-1);
+}
+
+/* Убирает слэш в поиске */
+span.hotkey-marker {
+  display: none;
+}
+
+/* Меняет фон у блока свернутого списка*/
+.collapsed.tiny {
+  background-color: var(--color-4);
+}
+
+/* Меняет цвет фона кнопок*/
+.btn-primary.btn-submit.btn  {
+  background-color: rgb(0, 0, 102);
+  color: var(--color-2) !important;
+}
+
+#profiles_show .profile-content .activity .title {
+    color: var(--color-1);
+}
+
+#profiles_show .profile-content .lifetime.b-stats_bar .label, .value.b-tooltipped.dotted {
+    color: var(--color-1);
+}
+
+#profiles_show .profile-head .c-brief.header .notice span {
+    color: var(--color-3);
+}
+
+.b-db_entry-variant-list_item .name .b-link {
+    color: var(--color-3);
+}
+
+.menu-slide-outer.x199 .subheadline {
+  color: var(--color-1);
+}
+
+.l-top_menu-v2 .submenu {
+  border: 0;
+  border-radius: 0 0 8px 8px;
+  --c20: color-mix(in srgb, var(--dropdown), #000 20%);
+  --c30: color-mix(in srgb, var(--dropdown), #000 30%);
+  --c40: color-mix(in srgb, var(--dropdown), #000 40%);
+  & > .legend { background-color: var(--c30); }
+  & > a {
+    background-color: var(--c20);
+    &:hover,
+    &:active { background-color: var(--c40); }
+  }
+}
+
+.l-menu .b-collection-filters .block li {
+  color: var(--color-1) !important;
+}
+
+.scores .score-9,
+.scores .score-8 {
+  color: #7fff00;
+}
+
+.scores .score-7 {
+  color: #eed202;
+}
+
+.scores .score-6 {
+  color: #fd5e53;
+}
+
+.b-js-link.cancel {
+  color: var(--color-2);
+}
+
+.edit-trigger .edit {
+  color: rgb(0, 0, 51) !important;
+}
+
+
+.b-rate.rateable .score-value.score-10 {
+  color: #00ff00;
+}
+
+.b-rate.rateable .score-value.score-9,
+.b-rate.rateable .score-value.score-8 {
+  color: #7fff00;
+}
+
+.b-rate.rateable .score-value.score-7 {
+  color: #eed202;
+}
+
+.b-rate.rateable .score-value.score-6 {
+  color: #fd5e53;
+}
+
+.p-user_rates-index .list-lines tr.edit-form form {
+  background-color: #779ecb;
+}
+
+.tooltip-inner, :is(.p-animes-franchise, .p-mangas-franchise, .p-ranobe-franchise) .sticky-tooltip {
+  background-color: var(--color-4);
+}
+
+:is(.b-user_rate, .b-catalog_entry-tooltip) .b-add_to_list :is(.trigger, .option), .b-add_to_list :is(.trigger, .option), .status-name {
+  border-color: blue !important;
+  background-color: var(--color-1) !important;
+  color: var(--color-2) !important;
+}
+
+.b-comments-notifier {
+  background-color: var(--color-1);
+  border-radius: 50%;
+}
+
+.b-lang_trigger span {
+  color: var(--color-1);
+}
+
+header.head h1 {
+  color: var(--color-1);
+}
+
+.b-input textarea:not([rows]), .b-input input[type=number], .b-input select {
+  background-color: var(--color-2);
+  color: black;
+}
+
+:is(.b-user_rate, .b-catalog_entry-tooltip) .inner .line .key, .p-user_rates-index .l-content .order-control, .b-block_list li, .b-rate .text-score, h2, h3, h4, header.head h1, header.head h2, .b-news_wall-topic .title {
+  color: var(--color-2);
+}
+
+
+:is(.p-animes-show, .p-mangas-show, .p-ranobe-show) .other-names, .b-comments :is(.comments-loader, .comments-hider, .comments-expander), :is(.b-comments, .b-forum) .faye-loader {
+	background-color: var(--color-4) !important;
+	color: var(--color-1);
+}
+
+.b-quote {
+	background-color: var(--color-4);
+	color: var(--color-2);
+}
+
+.p-profiles .profile-head .c-history .entry .misc, .p-profiles .profile-head .c-history .entry .misc.date {
+  color: var(--color-2) !important;
+}
+
+.b-stats_bar .stat_names a {
+  color: var(--color-2) !important;
+}
+
+.b-add_to_list .trigger .text, .b-add_to_list .option .text .statu-name span {
+  color: var(--color-2);
+}
+
+.b-collection_search .field input {
+	background: #0000;
+}
+
+.b-form a.remove {
+  color: #c23b22;
+  font-weight: bold;
+}
+
+.b-spoiler label {
+ color: var(--color-2);
+}
+
+.b-link {
+ color: var(--color-2);
+}
+
+header.head a.misc, header.head a.edit {
+ color: var(--color-2) !important;
+}
+
+.p-profiles .profile-head .c-brief header .notice a {
+ color: var(--color-2);
+ text-decoration: underline;
+}
+
+.b-footer_vote {
+ color:
+}
+
+.b-comment>.inner .name-date a.name {
+ color: var(--color-3);
+}
+
+header.head h1 a.back:after, header.head h2 a.back:after {
+ color: var(--color-2);
+}
+
+.b-db_entry>.c-about .additional-links .line-container>.link, .b-db_entry>.c-about .additional-links .line-container>a {
+ color: var(--color-2);
+ text-decoration: underline;
+}
+
+.b-spoiler_inline.is-opened {
+ background-color: #035096 !important;
+}
+
+.b-spoiler_inline:not(.is-opened) {
+ background-color: #035096 !important;
+}
+
+.b-message>.inner .name-date a.name {
+  color: var(--color-3);
+}
+
+a.b-mention {
+ color: var(--color-3);
+}
+
+.b-animes-menu .menu-topics-block .entry .name {
+ color: var(--color-2);
+ text-decoration: underline;
+}
+
+.l-menu .b-collection-filters .block li {
+   color: var(--color-2) !important;
+}
+
+.b-catalog_entry-tooltip .inner a.name {
+  color: var(--color-1);
+}
+
+.b-subposter-action.fav-remove {
+  color: gold;
+}
+
+.b-review-topic.is-review_review_author_details>.inner .review-details .name-url .to-review {
+  color: var(--color-2) !important;
+}
+
+.b-height_shortener .expand span {
+  color: var(--color-2) !important;
+}
+
+.b-shiki_editor .controls {
+  background-color: var(--color-1);
+  color:black;
+}
+
+.ProseMirror, code.b-code_inline, .b-shiki_editor .body .editor textarea:not([rows]) {
+  background-color: var(--color-2);
+}
+
+.buttons span:first-child, .buttons label:first-child, .buttons a:not(.b-button):first-child {
+  color: black;
+}
+
+.buttons .editor-italic:before, .buttons .editor-italic:after {
+  color: black;
+}
+
+.buttons .editor-underline:before {
+  color: black;
+}
+
+.buttons .editor-strike {
+  color: black;
+}
+
+.buttons .editor-link:active {
+  color: black;
+}
